@@ -35,3 +35,27 @@ values('s1@jmu.edu','c1'),
 	('s3@jmu.edu','c3')
 ;
 select * from enroll_list
+
+--2.5
+insert into professor(p_email,p_name,office)
+values ('p3@jmu.edu','p3','o3')
+;
+select * from professor 
+;
+insert into course (c_number, c_name, room, p_email)
+values ('c4','facebook','r1','p3@jmu.edu')
+;
+select * from course 
+-- you have to modify professor first, because the course table references the professor table
+--2.6
+update course
+set p_email = 'p3@jmu.edu'
+where p_email = 'p1@jmu.edu'
+*/
+select * from course 
+update course first, because p1 cannot be deleted while teaching the course.
+;
+delete from professor
+where p_name = 'p1'
+
+select * from professor 
